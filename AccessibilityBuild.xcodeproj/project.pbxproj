@@ -17,6 +17,11 @@
 		1A2B3C4D5E6F7A8B9C0D1E3D /* ContrastHeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7A8B9C0D1E3C /* ContrastHeroView.swift */; };
 		1A2B3C4D5E6F7A8B9C0D1E3F /* GameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7A8B9C0D1E3E /* GameScore.swift */; };
 		1A2B3C4D5E6F7A8B9C0D1E41 /* AccessibilityHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7A8B9C0D1E40 /* AccessibilityHelpers.swift */; };
+		1A2B3C4D5E6F7A8B9C0D1E43 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7A8B9C0D1E42 /* OnboardingView.swift */; };
+		1A2B3C4D5E6F7A8B9C0D1E45 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7A8B9C0D1E44 /* MainTabView.swift */; };
+		1A2B3C4D5E6F7A8B9C0D1E47 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7A8B9C0D1E46 /* ProgressView.swift */; };
+		1A2B3C4D5E6F7A8B9C0D1E49 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7A8B9C0D1E48 /* LearnView.swift */; };
+		1A2B3C4D5E6F7A8B9C0D1E4B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7A8B9C0D1E4A /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +36,12 @@
 		1A2B3C4D5E6F7A8B9C0D1E3C /* ContrastHeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrastHeroView.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7A8B9C0D1E3E /* GameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScore.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7A8B9C0D1E40 /* AccessibilityHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityHelpers.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7A8B9C0D1E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7A8B9C0D1E42 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7A8B9C0D1E44 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7A8B9C0D1E46 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7A8B9C0D1E48 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7A8B9C0D1E4A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7A8B9C0D1E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,7 @@
 			children = (
 				1A2B3C4D5E6F7A8B9C0D1E2E /* AccessibilityBuildApp.swift */,
 				1A2B3C4D5E6F7A8B9C0D1E2F /* ContentView.swift */,
+				1A2B3C4D5E6F7A8B9C0D1E44 /* MainTabView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -94,8 +105,12 @@
 		1A2B3C4D5E6F7A8B9C0D1E44 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				1A2B3C4D5E6F7A8B9C0D1E4D /* Onboarding */,
 				1A2B3C4D5E6F7A8B9C0D1E47 /* Home */,
 				1A2B3C4D5E6F7A8B9C0D1E48 /* Games */,
+				1A2B3C4D5E6F7A8B9C0D1E4E /* Progress */,
+				1A2B3C4D5E6F7A8B9C0D1E4F /* Learn */,
+				1A2B3C4D5E6F7A8B9C0D1E50 /* Profile */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -149,6 +164,38 @@
 				1A2B3C4D5E6F7A8B9C0D1E40 /* AccessibilityHelpers.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F7A8B9C0D1E4D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F7A8B9C0D1E42 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F7A8B9C0D1E4E /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F7A8B9C0D1E46 /* ProgressView.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F7A8B9C0D1E4F /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F7A8B9C0D1E48 /* LearnView.swift */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F7A8B9C0D1E50 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F7A8B9C0D1E4A /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,9 +270,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2B3C4D5E6F7A8B9C0D1E30 /* ContentView.swift in Sources */,
+				1A2B3C4D5E6F7A8B9C0D1E45 /* MainTabView.swift in Sources */,
+				1A2B3C4D5E6F7A8B9C0D1E43 /* OnboardingView.swift in Sources */,
 				1A2B3C4D5E6F7A8B9C0D1E39 /* HomeView.swift in Sources */,
 				1A2B3C4D5E6F7A8B9C0D1E3B /* GamesView.swift in Sources */,
 				1A2B3C4D5E6F7A8B9C0D1E3D /* ContrastHeroView.swift in Sources */,
+				1A2B3C4D5E6F7A8B9C0D1E47 /* ProgressView.swift in Sources */,
+				1A2B3C4D5E6F7A8B9C0D1E49 /* LearnView.swift in Sources */,
+				1A2B3C4D5E6F7A8B9C0D1E4B /* ProfileView.swift in Sources */,
 				1A2B3C4D5E6F7A8B9C0D1E3F /* GameScore.swift in Sources */,
 				1A2B3C4D5E6F7A8B9C0D1E41 /* AccessibilityHelpers.swift in Sources */,
 				1A2B3C4D5E6F7A8B9C0D1E2D /* AccessibilityBuildApp.swift in Sources */,

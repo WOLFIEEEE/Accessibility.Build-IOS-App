@@ -1,7 +1,7 @@
 import Foundation
 
-/// Model for storing game scores locally using UserDefaults
-struct GameScore: Codable, Identifiable {
+/// Model representing a game score
+struct GameScore: Identifiable, Codable {
     let id = UUID()
     let gameName: String
     let score: Int
@@ -14,53 +14,40 @@ struct GameScore: Codable, Identifiable {
     }
     
     var formattedScore: String {
-        "\(score)/\(totalQuestions) (\(percentage)%)"
+        return "\(score)/\(totalQuestions) (\(percentage)%)"
     }
 }
 
-/// Manager class for handling game score persistence
-@Observable
-final class GameScoreManager {
-    private let userDefaults = UserDefaults.standard
-    private let scoresKey = "accessibility_build_scores"
+/// Manager for handling game scores and high scores
+class GameScoreManager: ObservableObject {
+    @Published var highScores: [GameScore] = []
     
-    var highScores: [GameScore] = []
+    private let userDefaults = UserDefaults.standard
+    private let scoresKey = "gameScores"
     
     init() {
         loadScores()
     }
     
-    /// Save a new game score
     func saveScore(_ score: GameScore) {
         highScores.append(score)
-        // Keep only the top 10 scores per game
-        highScores = highScores
-            .filter { $0.gameName == score.gameName }
-            .sorted { $0.score > $1.score }
-            .prefix(10)
-            + highScores.filter { $0.gameName != score.gameName }
-        
+        highScores.sort { $0.timestamp > $1.timestamp } // Most recent first
         saveScores()
     }
     
-    /// Get the highest score for a specific game
-    func getHighScore(for gameName: String) -> GameScore? {
+    func getBestScore(for gameName: String) -> GameScore? {
         return highScores
             .filter { $0.gameName == gameName }
-            .max(by: { $0.score < $1.score })
+            .max { $0.percentage < $1.percentage }
     }
     
-    /// Get all scores for a specific game
-    func getScores(for gameName: String) -> [GameScore] {
-        return highScores
-            .filter { $0.gameName == gameName }
-            .sorted { $0.score > $1.score }
+    func getRecentScores(limit: Int = 5) -> [GameScore] {
+        return Array(highScores.prefix(limit))
     }
     
     private func loadScores() {
         guard let data = userDefaults.data(forKey: scoresKey),
               let scores = try? JSONDecoder().decode([GameScore].self, from: data) else {
-            highScores = []
             return
         }
         highScores = scores
