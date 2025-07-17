@@ -3,25 +3,44 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>Accessibility.build</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>com.accessibilitybuild.ios</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>AccessibilityBuild</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.education</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>accessibility.build</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<false/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -33,10 +52,6 @@
 				<dict>
 					<key>UISceneConfigurationName</key>
 					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
 				</dict>
 			</array>
 		</dict>
@@ -45,8 +60,6 @@
 	<dict>
 		<key>UIColorName</key>
 		<string>AccentColor</string>
-		<key>UIImageName</key>
-		<string>LaunchImage</string>
 	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
@@ -66,12 +79,26 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportsDocumentBrowser</key>
-	<true/>
+	<false/>
+	<!-- Accessibility Settings -->
 	<key>UIAccessibilityEnabled</key>
 	<true/>
 	<key>UIAccessibilityReducedMotionEnabled</key>
 	<true/>
 	<key>UIAccessibilityLargeTextEnabled</key>
 	<true/>
+	<!-- Privacy Descriptions -->
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This app does not track users. All data stays on your device.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>This app does not use location services.</string>
+	<!-- App Description -->
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2024 Accessibility.build. All rights reserved.</string>
+	<!-- Performance -->
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
 </dict>
 </plist> 
